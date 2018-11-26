@@ -5,6 +5,7 @@ public class Game {
 	public Player playerOne;
 	public Player playerTwo;
 	public Player winner;
+	public boolean gameFinished;
 	
 	public Game(Player playerOne, Player playerTwo) throws Exception {
 		
@@ -15,6 +16,7 @@ public class Game {
 				this.playerTwo = playerTwo;
 				this.playerOne.setNewScore();
 				this.playerTwo.setNewScore();
+				this.gameFinished = false;
 			} else {
 				throw new IllegalArgumentException("The two players must have a valid and different name");
 			}
@@ -51,10 +53,11 @@ public class Game {
 		if(playerOne != null && playerTwo != null) {
 				System.out.println("Player "+playerOne.getName()+" wins the ball !");
 				playerOne.increaseScore();
-				if(this.hasWinner()) {
+				if(this.hasWinner() && !gameFinished) {
 					winner = playerOne;
 					playerOne.increaseGamesWon();
 					playerTwo.increaseGamesLost();
+					gameFinished = true;
 				}
 				System.out.println("Score : "+this.getScore());
 		}
@@ -64,10 +67,11 @@ public class Game {
 		if(playerOne != null && playerTwo != null) {
 				System.out.println("Player "+playerTwo.getName()+" wins the ball !");
 				playerTwo.increaseScore();
-				if(this.hasWinner()) {
+				if(this.hasWinner() && !gameFinished) {
 					winner = playerTwo;
 					playerTwo.increaseGamesWon();
 					playerOne.increaseGamesLost();
+					gameFinished = true;
 				}
 				System.out.println("Score : "+this.getScore());
 		}

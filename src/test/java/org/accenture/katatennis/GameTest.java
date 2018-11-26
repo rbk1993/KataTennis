@@ -226,6 +226,8 @@ public class GameTest {
 		game.playerOneWinsBall();
 		game.playerOneWinsBall();
 		assertEquals("Reda wins",game.getScore());
+		assertEquals(1,player1.getGamesWon());
+		assertEquals(1,player2.getGamesLost());
 	}
 	
 	@Test
@@ -237,6 +239,8 @@ public class GameTest {
 		game.playerOneWinsBall();
 		game.playerOneWinsBall();
 		assertEquals("Reda wins",game.getScore());
+		assertEquals(1,player1.getGamesWon());
+		assertEquals(1,player2.getGamesLost());
 	}
 	
 	@Test
@@ -247,6 +251,8 @@ public class GameTest {
 		game.playerOneWinsBall();
 		game.playerOneWinsBall();
 		assertEquals("Reda wins",game.getScore());
+		assertEquals(1,player1.getGamesWon());
+		assertEquals(1,player2.getGamesLost());
 	}
 	
 	@Test
@@ -256,6 +262,8 @@ public class GameTest {
 		game.playerOneWinsBall();
 		game.playerOneWinsBall();
 		assertEquals("Reda wins",game.getScore());
+		assertEquals(1,player1.getGamesWon());
+		assertEquals(1,player2.getGamesLost());
 	}
 	
 	@Test
@@ -271,6 +279,66 @@ public class GameTest {
 		game.playerOneWinsBall();
 		game.playerOneWinsBall();
 		assertEquals("Reda wins",game.getScore());
+		assertEquals(1,player1.getGamesWon());
+		assertEquals(1,player2.getGamesLost());
+	}
+	
+	@Test
+	public void PlayerOneWinsTest6() {
+		game.playerOneWinsBall();
+		game.playerTwoWinsBall();
+		game.playerOneWinsBall();
+		game.playerTwoWinsBall();
+		game.playerOneWinsBall();
+		game.playerTwoWinsBall();
+		game.playerOneWinsBall();
+		game.playerTwoWinsBall();
+		game.playerOneWinsBall();
+		game.playerOneWinsBall();
+		game.playerOneWinsBall();
+		game.playerOneWinsBall();
+		game.playerOneWinsBall();
+		game.playerOneWinsBall();
+		assertEquals("Reda wins",game.getScore());
+		assertEquals(1,player1.getGamesWon());
+		assertEquals(1,player2.getGamesLost());
+	}
+	
+	@Test
+	public void PlayerTwoWinsTest1() {
+		game.playerOneWinsBall();
+		game.playerTwoWinsBall();
+		game.playerOneWinsBall();
+		game.playerTwoWinsBall();
+		game.playerOneWinsBall();
+		game.playerTwoWinsBall();
+		game.playerOneWinsBall();
+		game.playerTwoWinsBall();
+		game.playerTwoWinsBall();
+		game.playerTwoWinsBall();
+		assertEquals("Rafael wins",game.getScore());
+		assertEquals(1,player1.getGamesLost());
+		assertEquals(1,player2.getGamesWon());
+	}
+	
+	@Test
+	public void PlayerTwoWinsTest2() {
+		game.playerOneWinsBall();
+		game.playerTwoWinsBall();
+		game.playerOneWinsBall();
+		game.playerTwoWinsBall();
+		game.playerOneWinsBall();
+		game.playerTwoWinsBall();
+		game.playerOneWinsBall();
+		game.playerTwoWinsBall();
+		game.playerTwoWinsBall();
+		game.playerTwoWinsBall();
+		game.playerTwoWinsBall();
+		game.playerTwoWinsBall();
+		game.playerTwoWinsBall();
+		assertEquals("Rafael wins",game.getScore());
+		assertEquals(1,player1.getGamesLost());
+		assertEquals(1,player2.getGamesWon());
 	}
 	
 	@After
